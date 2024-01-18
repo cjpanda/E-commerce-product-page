@@ -5,10 +5,23 @@ import { useState } from "react";
 
 const ProductDetails = () => {
   const [amount, setAmount] = useState(0);
+  const [cartItems, setCartItems] = useState([]);
 
   const handleMinus = () => {
-    setAmount(amount - 1);
-    if (amount <= 0) setAmount(0);
+    setAmount((prevAmount) => (prevAmount > 0 ? prevAmount - 1 : 0));
+  };
+
+  const handleAddToCart = () => {
+    if (amount > 0) {
+      const newItem = {
+        id: cartItems.length + 1,
+        amount,
+        price: 125.0,
+      };
+
+      setCartItems((prevItems) => [...prevItems, newItem]);
+      setAmount(0);
+    }
   };
 
   return (
@@ -53,7 +66,10 @@ const ProductDetails = () => {
           />
         </div>
 
-        <button className="flex gap-5 items-center justify-center bg-accent px-20 py-4 rounded-xl text-white font-bold shadow-accent shadow-md">
+        <button
+          onClick={handleAddToCart}
+          className="flex gap-5 items-center justify-center bg-accent px-20 py-4 rounded-xl text-white font-bold shadow-accent shadow-md"
+        >
           <img src={cart} alt="" className="" />
           Add to cart
         </button>

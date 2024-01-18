@@ -2,11 +2,13 @@ import { useState } from "react";
 import { imageData } from "./imageData";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { useMediaQuery } from "react-responsive";
+import LightBox from "./LightBox";
 
 const ProductImage = () => {
   const [products] = useState(imageData);
   const [value, setValue] = useState(0);
   const [slideIndex, setSlideIndex] = useState(1);
+  const [showLightbox, setShowLightbox] = useState(false);
   const isSmallScreen = useMediaQuery({ maxWidth: 767 });
 
   const { mainImage } = products[value];
@@ -28,6 +30,15 @@ const ProductImage = () => {
 
   return (
     <>
+      {showLightbox && (
+        <LightBox
+          products={products}
+          slideIndex={slideIndex}
+          nextSlide={nextSlide}
+          previousSlide={previousSlide}
+          setShowLightbox={setShowLightbox}
+        />
+      )}
       <div className="mx-auto w-full ">
         {products.map((item, index) => (
           <div
@@ -37,7 +48,8 @@ const ProductImage = () => {
             <img
               src={isSmallScreen ? item.mainImage : mainImage}
               alt=""
-              className="w-full rounded-3xl"
+              className="w-full rounded-2xl cursor-pointer"
+              onClick={() => setShowLightbox(true)}
             />
             <div className="lg:hidden">
               <button

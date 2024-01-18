@@ -4,9 +4,12 @@ import profile from "../assets/image-avatar.png";
 import menuOpen from "../assets/icon-menu.svg";
 import menuClose from "../assets/icon-close.svg";
 import { useState } from "react";
+import Cart from "./Cart";
 
-const Header = () => {
+const Header = ({ cartItems, setCartItems }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
+
   return (
     <>
       <header className="max-width mx-auto  flex justify-between items-center p-8">
@@ -48,8 +51,17 @@ const Header = () => {
 
         {/* Profile and Shopping Cart */}
         <div className="flex items-center gap-5">
-          <div className="cursor-pointer">
+          <button
+            onClick={() => setCartOpen(!cartOpen)}
+            className="cursor-pointer"
+          >
             <img src={cart} alt="" />
+          </button>
+          {/* Cart */}
+          <div>
+            {cartOpen && (
+              <Cart cartItems={cartItems} setCartItems={setCartItems} />
+            )}
           </div>
           <div className=" cursor-pointer ">
             <img
