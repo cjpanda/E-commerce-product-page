@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Kumbh Sans", sans-serif;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply bg-[#f7f8fd];
+}
+
+.max-width {
+  @apply px-5 lg:max-w-5xl lg:mx-auto xl:max-w-6xl 2xl:px-0;
+}
+
+ul,
+li {
+  @apply list-none;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  width: 60%;
+  height: 100%;
+  z-index: 99;
+  transition: all 0.2s ease-in-out;
+}
+
+nav.open {
+  top: 0;
+  left: 0;
+  background-color: white;
+  @apply shadow-2xl p-8 lg:shadow-none lg:p-0;
+}
+
+nav ul {
+  padding-top: 60px;
+  @apply flex items-start flex-col gap-4 lg:flex-row;
+}
+
+nav ul li {
+  @apply font-bold text-lg cursor-pointer lg:font-normal lg:text-base;
+}
+
+.close {
+  @apply absolute top-8 left-8;
+  z-index: 999;
+}
+
+@media (min-width: 1024px) {
+  .big-image {
+    height: 900px;
+  }
+
+  nav {
+    position: relative;
+    left: 0;
+    width: auto;
+    height: auto;
+    z-index: auto;
+  }
+
+  nav.open {
+    background-color: transparent;
+  }
+
+  nav ul {
+    padding-top: 0;
+  }
+}
