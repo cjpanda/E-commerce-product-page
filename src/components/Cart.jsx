@@ -1,4 +1,4 @@
-import thumbnail from "../../public/image-product-1-thumbnail.jpg";
+import thumbnail from "/image-product-1-thumbnail.jpg";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 
 const Cart = () => {
