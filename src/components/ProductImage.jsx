@@ -2,7 +2,7 @@ import { useState } from "react";
 import { imageData } from "./imageData";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { useMediaQuery } from "react-responsive";
-import LightBox from "./LightBox";
+import Lightbox from "./Lightbox";
 
 const ProductImage = () => {
   const [products] = useState(imageData);
@@ -31,7 +31,7 @@ const ProductImage = () => {
   return (
     <>
       {showLightbox && (
-        <LightBox
+        <Lightbox
           products={products}
           slideIndex={slideIndex}
           nextSlide={nextSlide}

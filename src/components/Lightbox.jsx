@@ -2,7 +2,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import PropTypes from "prop-types";
 import close from "../assets/icon-close.svg";
 
-const LightBox = ({
+const Lightbox = ({
   products,
   slideIndex,
   nextSlide,
@@ -58,7 +58,7 @@ const LightBox = ({
   );
 };
 // Props Validation
-LightBox.propTypes = {
+Lightbox.propTypes = {
   products: PropTypes.array.isRequired,
   slideIndex: PropTypes.number.isRequired,
   nextSlide: PropTypes.func.isRequired,
@@ -66,4 +66,4 @@ LightBox.propTypes = {
   setShowLightbox: PropTypes.func.isRequired,
 };
 
-export default LightBox;
+export default Lightbox;
