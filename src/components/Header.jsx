@@ -6,7 +6,7 @@ import menuClose from "../assets/icon-close.svg";
 import { useState } from "react";
 import Cart from "./Cart";
 
-const Header = ({ cartItems, setCartItems }) => {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
 
@@ -58,11 +58,7 @@ const Header = ({ cartItems, setCartItems }) => {
             <img src={cart} alt="" />
           </button>
           {/* Cart */}
-          <div>
-            {cartOpen && (
-              <Cart cartItems={cartItems} setCartItems={setCartItems} />
-            )}
-          </div>
+          <div>{cartOpen && <Cart />}</div>
           <div className=" cursor-pointer ">
             <img
               src={profile}

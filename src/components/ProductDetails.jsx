@@ -68,7 +68,7 @@ const ProductDetails = () => {
 
         <button
           onClick={handleAddToCart}
-          className="flex gap-5 items-center justify-center bg-accent px-20 py-4 rounded-xl text-white font-bold shadow-accent shadow-md"
+          className="flex gap-5 items-center justify-center bg-accent hover:bg-opacity-80 px-20 py-4 rounded-xl text-white font-bold shadow-accent shadow-md"
         >
           <img src={cart} alt="" className="" />
           Add to cart

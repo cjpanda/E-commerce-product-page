@@ -14,7 +14,7 @@ const Cart = () => {
           Cart
         </h2>
 
-        <div className="flex items-center gap-4 mb-10">
+        <div className="flex items-center gap-4 mb-5">
           <div>
             <img
               src={thumbnail}
@@ -25,13 +25,13 @@ const Cart = () => {
           <div>
             <p className="text-light">Fall Limited Edition Sneakers</p>
             <p className="text-sm">
-              $125.00 x 3{" "}
+              <span className="text-light">$125.00 x 3</span>{" "}
               <span className="font-bold text-primary">$375.00</span>
             </p>
           </div>
-          <RiDeleteBin6Fill className="text-light" />
+          <RiDeleteBin6Fill className="text-light cursor-pointer" />
         </div>
-        <button className="bg-accent font-bold text-white flex items-center justify-center w-full p-4 rounded-xl ">
+        <button className="bg-accent hover:bg-opacity-80 font-bold text-white flex items-center justify-center w-full p-4 rounded-xl ">
           Checkout
         </button>
       </div>
